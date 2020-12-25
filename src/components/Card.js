@@ -1,13 +1,13 @@
 function Card(props) {
-    function handleCardClick() {
-      props.onCardClick(props.card.name, props.card.link);
+    const handleCardClick = () => {
+        props.onCardClick(props.card)
     }
   
     return (
         <li className="element">
             <article className="element__card">
                 <img className="element__img" 
-                src={props.card.src} 
+                src={props.card.link} 
                 alt={props.card.name}
                 onClick={handleCardClick}
                 />

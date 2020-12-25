@@ -12,7 +12,6 @@ function App(props) {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false)
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false)
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false)
-  const [isImagePopupOpen, setIsImagePopupOpen] = React.useState(false);
   const [selectedCard, setSelectedCard] = React.useState()
 
   const handleEditAvatarClick = () => {
@@ -28,7 +27,6 @@ function App(props) {
   }
 
   const handleCardClick = (card) => {
-    setIsImagePopupOpen(true);
     setSelectedCard(card);    
   }
 
@@ -41,7 +39,7 @@ function App(props) {
   }
 
   return (
-    <body className="body">
+    <div className="body">
       <div className="page">
         <Header />
         <Main 
@@ -71,9 +69,9 @@ function App(props) {
         isOpen={isAddPlacePopupOpen}
         onClose={closeAllPopups}>
             <div>                
-              <input className="popup__about popup__about_grey-line popup__about_photo-card" id="sign-in-photo-card-name" type="text" placeholder="Название" value="" name="name" required minlength={2} maxlength={30} autocomplete="off" />
+              <input className="popup__about popup__about_grey-line popup__about_photo-card" id="sign-in-photo-card-name" type="text" placeholder="Название"  name="name"required minlength={2} maxlength={30} autocomplete="off" />
               <span className="" id="sign-in-photo-card-name-error"></span>  
-              <input className="popup__about popup__about_grey-line popup__about_occupation_photo-card" id="sign-in-photo-card-occupation" type="url" placeholder="Ссылка на картинку" value="" name="about" required autocomplete="off" />
+              <input className="popup__about popup__about_grey-line popup__about_occupation_photo-card" id="sign-in-photo-card-occupation" type="url" placeholder="Ссылка на картинку" name="about" required autocomplete="off" />
               <span className="" id="sign-in-photo-card-occupation-error"></span>
             </div>
         </PopupWithForm>
@@ -84,22 +82,20 @@ function App(props) {
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}>
             <div>                
-              <input className="popup__about popup__about_grey-line popup__about_new-avatar" id="sign-in-photo-card-occupation" type="url"  placeholder="Ссылка на картинку" value="" name="avatar" required autocomplete="off" />
+              <input className="popup__about popup__about_grey-line popup__about_new-avatar" id="sign-in-photo-card-occupation" type="url"  placeholder="Ссылка на картинку"  name="avatar" required autocomplete="off" />
               <span className="" id="sign-in-photo-card-occupation-error"></span>
             </div>
         </PopupWithForm>
         <PopupWithForm 
         title="Вы уверены?" 
-        name="delete">
-        </PopupWithForm>
+        name="delete"
+        />
         <ImagePopup
         card={selectedCard}
-        onClose={closeAllPopups}
-        isOpen={isImagePopupOpen}
-        >
-        </ImagePopup>
+        onClose={closeAllPopups}        
+        />
       </div>
-    </body>
+    </div>
   );
 }
 

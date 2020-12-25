@@ -1,5 +1,5 @@
 import React from "react";
-import { api } from "../utils/Api";
+import { api } from "../utils/api";
 import Card from "./Card";
 
 function Main(props) {
@@ -11,15 +11,7 @@ function Main(props) {
     React.useEffect(() => {
       api.getInitialCards()
         .then((result) => {
-          const cards = result.map((card) => {
-            return {
-              id: card._id,
-              src: card.link,
-              name: card.name,  
-              likes: card.likes
-            };
-          });
-          setCards(cards)
+          setCards(result)
         })
     }, []);
   
@@ -64,7 +56,7 @@ function Main(props) {
           ></button>
         </section>
         <ul className="elements">
-            {cards.map((card) => {
+            {cards.map(card => {
               return (
                 <Card
                 card={card}
