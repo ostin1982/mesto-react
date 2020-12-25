@@ -8,7 +8,7 @@ function Card(props) {
             <article className="element__card">
                 <img className="element__img" 
                 src={props.card.src} 
-                alt={`Изображение, на котором ${props.card.name}`}
+                alt={props.card.name}
                 onClick={handleCardClick}
                 />
             <button className="element__basket" type="button"></button>

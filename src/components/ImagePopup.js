@@ -4,7 +4,7 @@ function ImagePopup(props) {
             <div className="popup__photo-element">
                 <img 
                 className="popup__photo-big" 
-                src={props.src} 
+                src={props.link} 
                 alt={props.name}
                  />                               
                 <button 
