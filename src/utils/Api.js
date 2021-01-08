@@ -15,7 +15,7 @@ class Api {
     }
 
     
-    //Получить карточки с сервера.
+    //Получить карточки с сервера
     getInitialCards() {
         return this._addCommonFetchForAllApis(`${this._baseUrl}/cards`, {
             method: "GET",
@@ -23,8 +23,8 @@ class Api {
         })
     }
 
-    //Блок работы с карточками.
-    //Добавление карточки.
+    //Блок работы с карточками
+    //Добавление карточки
     addNewCard(card) {
         return this._addCommonFetchForAllApis(`${this._baseUrl}/cards`, {
             method: 'POST',
@@ -37,7 +37,7 @@ class Api {
             });
     }
 
-    //Удаление карточки.
+    //Удаление карточки
     deleteCard(card) {
         return this._addCommonFetchForAllApis(`${this._baseUrl}/cards/${card._id}`, {
             method: 'DELETE',
@@ -46,7 +46,7 @@ class Api {
         });
     }
 
-    //Лайк картинке.
+    //Лайк картинке
     addLikeCard(card) {
         return this._addCommonFetchForAllApis(`${this._baseUrl}/cards/likes/${card._id}`, {
             method: 'PUT',
@@ -55,7 +55,7 @@ class Api {
         });
     }
 
-    //Удаление лайк картинке.
+    //Удаление лайк картинке
     deleteLikeCard(card) {
         return this._addCommonFetchForAllApis(`${this._baseUrl}/cards/likes/${card._id}`, {
             method: 'DELETE',
@@ -64,8 +64,8 @@ class Api {
         });
     } 
 
-    //Блок работы с профилем.
-    //Получить данные пользователя.
+    //Блок работы с профилем
+    //Получить данные пользователя
     getUserInfoAbout() {
         return this._addCommonFetchForAllApis(`${this._baseUrl}/users/me`, {
             method: "GET",
@@ -73,7 +73,7 @@ class Api {
         })
     }
 
-    //Редактировать данные пользователя.
+    //Редактировать данные пользователя
     changeInfo(userData) {
         return this._addCommonFetchForAllApis(`${this._baseUrl}/users/me`, {
             method: 'PATCH',
@@ -85,7 +85,7 @@ class Api {
         }); 
     }
 
-    //Редактировать аватар пользователя.
+    //Редактировать аватар пользователя
     changeUserAvatar(imgSrc){
         return this._addCommonFetchForAllApis(`${this._baseUrl}/users/me/avatar`, {
             method: 'PATCH',
