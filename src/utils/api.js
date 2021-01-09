@@ -105,3 +105,5 @@ export  const api = new Api({
       'Content-Type': "application/json",
     },
   });
+
+//Проверка для переименовки в api.js

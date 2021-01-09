@@ -56,9 +56,9 @@ function App(props) {
         isOpen={isEditProfilePopupOpen}
         onClose={closeAllPopups}>
             <div>
-              <input className="popup__about popup__about_grey-line popup__about_name" name="name" type="text" required placeholder="Имя" id="sign-in-name" minlength={2} maxlength={40} autocomplete="off" />                 
+              <input className="popup__about popup__about_grey-line popup__about_name" name="name" type="text" required placeholder="Имя" id="sign-in-name" minLength={2} maxLength={40} autoComplete="off" />                 
               <span className="" id="sign-in-name-error"></span>
-              <input className="popup__about popup__about_grey-line popup__about_occupation_name" name="about" type="text" required placeholder="О себе" id="sign-in-occupation" minlength={2} maxlength={200} autocomplete="off" />
+              <input className="popup__about popup__about_grey-line popup__about_occupation_name" name="about" type="text" required placeholder="О себе" id="sign-in-occupation" minLength={2} maxLength={200} autoComplete="off" />
               <span className="" id="sign-in-occupation-error"></span>                            
             </div>
         </PopupWithForm>
@@ -69,9 +69,9 @@ function App(props) {
         isOpen={isAddPlacePopupOpen}
         onClose={closeAllPopups}>
             <div>                
-              <input className="popup__about popup__about_grey-line popup__about_photo-card" id="sign-in-photo-card-name" type="text" placeholder="Название"  name="name"required minlength={2} maxlength={30} autocomplete="off" />
+              <input className="popup__about popup__about_grey-line popup__about_photo-card" id="sign-in-photo-card-name" type="text" placeholder="Название"  name="name"required minLength={2} maxLength={30} autoComplete="off" />
               <span className="" id="sign-in-photo-card-name-error"></span>  
-              <input className="popup__about popup__about_grey-line popup__about_occupation_photo-card" id="sign-in-photo-card-occupation" type="url" placeholder="Ссылка на картинку" name="about" required autocomplete="off" />
+              <input className="popup__about popup__about_grey-line popup__about_occupation_photo-card" id="sign-in-photo-card-occupation" type="url" placeholder="Ссылка на картинку" name="about" required autoComplete="off" />
               <span className="" id="sign-in-photo-card-occupation-error"></span>
             </div>
         </PopupWithForm>
@@ -82,7 +82,7 @@ function App(props) {
         isOpen={isEditAvatarPopupOpen}
         onClose={closeAllPopups}>
             <div>                
-              <input className="popup__about popup__about_grey-line popup__about_new-avatar" id="sign-in-photo-card-occupation" type="url"  placeholder="Ссылка на картинку"  name="avatar" required autocomplete="off" />
+              <input className="popup__about popup__about_grey-line popup__about_new-avatar" id="sign-in-photo-card-occupation" type="url"  placeholder="Ссылка на картинку"  name="avatar" required autoComplete="off" />
               <span className="" id="sign-in-photo-card-occupation-error"></span>
             </div>
         </PopupWithForm>
