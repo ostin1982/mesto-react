@@ -60,7 +60,7 @@ function Main(props) {
               return (
                 <Card
                 card={card}
-                key={card._id}  
+                key={card._id}
                 onCardClick={props.onCardClick}
                 />
               );
