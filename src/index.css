@@ -20,6 +20,7 @@
 @import url("./blocks/element/__img/element__img.css");
 @import url("./blocks/element/__basket/element__basket.css");
 @import url("./blocks/element/__basket/_basket/element__basket_active.css");
+@import url("./blocks/element/__basket/_basket/element__basket_inactive.css");
 @import url("./blocks/element/__info/element__info.css");
 @import url("./blocks/element/__name/element__name.css");
 @import url("./blocks/element/__like/element__like.css");

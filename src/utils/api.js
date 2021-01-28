@@ -32,7 +32,6 @@ class Api {
             body: JSON.stringify({
                 name: card.name,
                 link: card.link,
-                id: card._id,
                 })
             });
     }
@@ -64,6 +63,16 @@ class Api {
         });
     } 
 
+    //Статус лайка
+    changeLikeCardStatus(card, isLiked) {
+        if (isLiked) {
+            return this.deleteLikeCard(card)
+        }
+        else {
+            return this.addLikeCard(card)
+        }
+    }
+
     //Блок работы с профилем
     //Получить данные пользователя
     getUserInfoAbout() {
@@ -91,7 +100,7 @@ class Api {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-                avatar: imgSrc.avatar
+                avatar: imgSrc
             })
         });
     }
@@ -101,9 +110,8 @@ class Api {
 export  const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-17',
     headers: {
-      authorization: '8332b55f-19df-4a02-8ae6-2a849ecc3e1d',
-      'Content-Type': "application/json",
+        authorization: '8332b55f-19df-4a02-8ae6-2a849ecc3e1d',
+        'Content-Type': "application/json",
     },
-  });
+});
 
-//Проверка для переименовки в api.js
