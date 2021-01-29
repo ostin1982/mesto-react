@@ -51,7 +51,7 @@ function EditProfilePopup({ onUpdateUser, isOpen, onClose }) {
         </PopupWithForm> 
     )
 }
-
+ // Если переношу кнопку в PopupWithForm, то она перестает работать. Так же в ConfirmDeletionPopup, другой текс.
 
 
 export default EditProfilePopup;

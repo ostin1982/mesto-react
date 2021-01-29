@@ -18,7 +18,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(); 
-  const [deletedCard, setDeletedCard] = useState(""); 
+  const [deletedCard, setDeletedCard] = useState({}); 
 
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
@@ -33,6 +33,7 @@ function App() {
         setCards(result);
         setCurrentUser(user);
       })
+      .catch(error => console.log(`Ошибка при попытке загрузить данные пользователя и карточки: ${error}`));
   }, []);
   
 
@@ -54,7 +55,7 @@ function App() {
 
   const handleDeleteClick = (card) => {
     setIsConfirmDeletionPopupOpen(true);
-    setDeletedCard(card._id);
+    setDeletedCard(card);
   }
 
   const closeAllPopups = () => {
