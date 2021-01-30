@@ -1,4 +1,4 @@
-function ImagePopup({ card, name, onClose }) {
+function ImagePopup({ card, onClose }) {
     return (
         <div className={`popup popup__photo-big-card ${card && "popup_is-open"}`}> 
             <div className="popup__photo-element">
@@ -13,7 +13,7 @@ function ImagePopup({ card, name, onClose }) {
                 aria-label="Закрыть"
                 onClick={onClose}
                 ></button>
-                <p className="popup__photo-edit">{name}</p>
+                <p className="popup__photo-edit">{card?.name}</p>
             </div>
         </div>
     );

@@ -63,7 +63,6 @@ function App() {
     setIsAddPlacePopupOpen(false);
     setIsEditAvatarPopupOpen(false);
     setIsConfirmDeletionPopupOpen(false);
-    setDeletedCard({});
     setSelectedCard();
   };
 
@@ -78,14 +77,14 @@ function App() {
 } 
 
 
-function handleDeleteCard(card) {
-  api.deleteCard(card).then(() => {
-    const newCards = cards.filter((c) => c._id !== card);
-    setCards(newCards);
-    closeAllPopups();
-  })
-  .catch(error => console.error(error));
-  }
+  function handleDeleteCard(card) {
+    api.deleteCard(card).then(() => {
+      const newCards = cards.filter((c) => c._id !== card._id);
+      setCards(newCards);
+      closeAllPopups();
+    })
+    .catch(error => console.error(error));
+    }
 
 
   function handleUpdateUser(userData) {
@@ -97,7 +96,7 @@ function handleDeleteCard(card) {
     .catch(error => console.error(error))
   }
 
-  function handleUpdateAvatar({imgSrc}) {
+  function handleUpdateAvatar(imgSrc) {
     api.changeUserAvatar(imgSrc)
     .then((result) => {
       setCurrentUser(result);
@@ -161,7 +160,8 @@ function handleDeleteCard(card) {
         
         <ImagePopup
         card={selectedCard}
-        onClose={closeAllPopups}  
+        onClose={closeAllPopups} 
+        {...selectedCard} 
         />
 
       </div>

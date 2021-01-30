@@ -40,7 +40,7 @@ function Main({ cards, onEditAvatar, onEditProfile, onAddPlace, onCardClick, onC
         </section>
         <section className="element">
         <ul className="elements">
-            {cards && cards.map((card) => {
+            {cards.map((card) => {
               return (
                 <Card
                 card={card}

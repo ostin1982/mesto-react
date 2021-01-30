@@ -16,20 +16,20 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
         `element__like ${isLiked ? 'element__like_active' : ''}`
     ); 
 
-    function handleCardClick() {
+    const handleCardClick = () => {
         onCardClick(card);
     } 
 
-    function handleCardLike() {
+    const handleCardLike = () => {
         onCardLike(card);
     }
 
-    function handleDeleteClick() {
+    const handleDeleteClick = () => {
         onCardDelete(card);
     }
 
     return (
-        <li className="element" key={card.key}>
+        <li className="element">
             <article className="element__card">
                 <img className="element__img" 
                 src={card.link} 
@@ -38,7 +38,6 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
                 />
             <button 
                 type="button" 
-                aria-label="Удалить"
                 className={cardDeleteButtonClassName}
                 onClick={handleDeleteClick}
             ></button>

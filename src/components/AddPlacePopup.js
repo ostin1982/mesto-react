@@ -7,7 +7,7 @@ function AddPlacePopup({ onAddPlace, isOpen, onClose }) {
     const urlRef = useRef();
 
 
-    function handleSubmit(event) {
+    const handleSubmit = (event) => {
         event.preventDefault();
         onAddPlace({
             name: placeRef.current.value,
@@ -30,7 +30,6 @@ function AddPlacePopup({ onAddPlace, isOpen, onClose }) {
                 <input ref={urlRef} className="popup__about popup__about_grey-line popup__about_occupation_photo-card" id="sign-in-photo-card-occupation" type="url" placeholder="Ссылка на картинку"  name="link" required autoComplete="off" />
                 <span className="" id="sign-in-photo-card-occupation-error"></span>
             </section>
-            <input className="popup__submit" type="submit" value="Сохранить" />
         </PopupWithForm>
     )
 }

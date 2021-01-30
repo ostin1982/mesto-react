@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+
 import PopupWithForm from "./PopupWithForm";
 
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
@@ -37,7 +38,7 @@ function EditProfilePopup({ onUpdateUser, isOpen, onClose }) {
         <PopupWithForm 
         title="Редактировать профиль" 
         name="edit" 
-        button="Сохранить" 
+        button="Сохранить"
         isOpen={isOpen}
         onClose={onClose}
         onSubmit={handleSubmit}>
@@ -47,11 +48,8 @@ function EditProfilePopup({ onUpdateUser, isOpen, onClose }) {
                 <input className="popup__about popup__about_grey-line popup__about_occupation_name" name="description" type="text" value={description} onChange={handleChangeDescription} required placeholder="О себе" id="sign-in-occupation" minLength={2} maxLength={200} autoComplete="off" />
                 <span className="" id="sign-in-occupation-error"></span>                            
             </section>
-            <input className="popup__submit" type="submit" value="Сохранить" />
         </PopupWithForm> 
     )
 }
- // Если переношу кнопку в PopupWithForm, то она перестает работать. Так же в ConfirmDeletionPopup, другой текс.
-
 
 export default EditProfilePopup;
